@@ -29,4 +29,14 @@ public class TestEightQueens {
 				"0 0 0 0 0 0 0 0";
 		assertEquals(resultadoReal.equals(resultadoEsperado),false);
 	}
+	
+	@Test
+	void TestContent() {
+		Board b = new Board();
+		int[] v = new int[8];
+		v[5] = 1;
+		boolean resultadoReal = b.content(v, 1);
+		boolean resultadoEsperado = true;
+		assertEquals(resultadoReal,resultadoEsperado);
+	}
 }
