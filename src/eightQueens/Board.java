@@ -12,7 +12,12 @@ public class Board {
 	private int board_[][];
 	private static final int size_ = 8;
 	Board(){
-		
+		board_ = new int[size_][size_];
+		for(int i = 0; i < size_; i++) {
+			for(int j = 0; j < size_; j++) {
+				board_[i][j] = 0;
+			}
+		}
 	}
 	
 	public String toString() {
