@@ -41,6 +41,10 @@ public class Board {
 	}
 	
 	boolean content(int v[], int val) {
-		
+		for(int i=0; i<v.length; i++) {
+			if(v[i]==val)
+				return true;
+		}
+		return false;
 	}
 }
