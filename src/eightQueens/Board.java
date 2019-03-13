@@ -53,6 +53,10 @@ public class Board {
 	}
 	
 	boolean content(ArrayList<Integer> v, int val) {
-		
+		for(int i=0; i<v.size(); i++) {
+			if(v.get(i)==val)
+				return true;
+		}
+		return false;
 	}
 }
