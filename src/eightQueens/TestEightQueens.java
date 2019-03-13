@@ -14,7 +14,7 @@ import org.junit.jupiter.api.Test;
 public class TestEightQueens {
 
 	@Test
-	void TestQueen(){
+	void TestBoardConstructor(){
 		Board b= new Board();
 		System.out.println(b);
 		String resultadoReal = b.toString();
