@@ -5,6 +5,8 @@ package eightQueens;
 
 import static org.junit.Assert.assertEquals;
 
+import java.util.ArrayList;
+
 import org.junit.jupiter.api.Test;
 
 /**
@@ -33,8 +35,8 @@ public class TestEightQueens {
 	@Test
 	void TestContent() {
 		Board b = new Board();
-		int[] v = new int[8];
-		v[5] = 1;
+		ArrayList<Integer> v = new ArrayList<Integer>(8);
+		v.add(1);
 		boolean resultadoReal = b.content(v, 1);
 		boolean resultadoEsperado = true;
 		assertEquals(resultadoReal,resultadoEsperado);

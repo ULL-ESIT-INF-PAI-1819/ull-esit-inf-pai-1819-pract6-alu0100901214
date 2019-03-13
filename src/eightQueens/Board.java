@@ -3,6 +3,8 @@
  */
 package eightQueens;
 
+import java.util.ArrayList;
+
 /**
  * @author Sergio González Guerra
  *
@@ -36,15 +38,21 @@ public class Board {
 		return cad;
 	}
 	
-	void queens(int k, int col[], int diagAs[], int diagDes[]) {
-		
+	
+	void queens(int k, ArrayList<Integer> col, ArrayList<Integer> diagAs, ArrayList<Integer> diagDes) {
+		if(k == nQueens_) {
+			
+		} else {
+			for(int j = 1; j <= nQueens_; j++) {
+				if(!content(col,j)&&(!content(diagAs,j+k))&&(!content(diagDes,j-k))) {
+					sol_[k]=j;
+					
+				}
+			}
+		}
 	}
 	
-	boolean content(int v[], int val) {
-		for(int i=0; i<v.length; i++) {
-			if(v[i]==val)
-				return true;
-		}
-		return false;
+	boolean content(ArrayList<Integer> v, int val) {
+		
 	}
 }
