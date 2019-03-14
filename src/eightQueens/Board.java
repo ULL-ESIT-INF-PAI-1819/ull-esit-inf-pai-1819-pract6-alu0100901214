@@ -20,6 +20,7 @@ public class Board {
 	private static final int nQueens_ = 8;
 	Board(){
 		board_ = new int[size_][size_];
+		sol_ = new int[size_];
 		for(int i = 0; i < size_; i++) {
 			for(int j = 0; j < size_; j++) {
 				board_[i][j] = 0;
@@ -40,16 +41,7 @@ public class Board {
 	
 	
 	void queens(int k, ArrayList<Integer> col, ArrayList<Integer> diagAs, ArrayList<Integer> diagDes) {
-		if(k == nQueens_) {
-			
-		} else {
-			for(int j = 1; j <= nQueens_; j++) {
-				if(!content(col,j)&&(!content(diagAs,j+k))&&(!content(diagDes,j-k))) {
-					sol_[k]=j;
-					
-				}
-			}
-		}
+
 	}
 	
 	boolean content(ArrayList<Integer> v, int val) {
