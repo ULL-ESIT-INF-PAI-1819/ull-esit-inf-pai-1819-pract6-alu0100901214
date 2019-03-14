@@ -10,9 +10,29 @@ package eightQueens;
 public class Solution {
 	
 	int[][] solutionQueens;
+	private static final int size_ = 8;
+	
+	Solution(){
+		solutionQueens = new int[size_][size_];
+	}
 	
 	void setSolution(int[] sol){
-		
+		int k=0;
+		boolean check=false;
+		for (int j = 0; j < sol.length; j++) {
+			for (int i = 0; i < size_; i++) {
+				if((sol[k]-1==i)&&(!check)) {
+					solutionQueens[i][j] = 1;
+					if(k<sol.length-1)
+						k++;
+					check =true;
+				}else {
+					solutionQueens[i][j] = 0;
+					
+				}
+			}
+			check=false;
+		}
 	}
 	
 	public String toString() {

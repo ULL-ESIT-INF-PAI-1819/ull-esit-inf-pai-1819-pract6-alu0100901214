@@ -48,7 +48,7 @@ public class TestEightQueens {
 		int[] v = new int[] {1,5,8,6,3,7,2,4};
 		s.setSolution(v);
 		String resultadoReal = s.toString();
-		String resultadoEsperado = 
+		String resultadoEsperado =
 				"1 0 0 0 0 0 0 0 \r\n" + 
 				"0 0 0 0 0 0 1 0 \r\n" + 
 				"0 0 0 0 1 0 0 0 \r\n" + 
@@ -56,7 +56,8 @@ public class TestEightQueens {
 				"0 1 0 0 0 0 0 0 \r\n" + 
 				"0 0 0 1 0 0 0 0 \r\n" + 
 				"0 0 0 0 0 1 0 0 \r\n" + 
-				"0 0 1 0 0 0 0 0";
+				"0 0 1 0 0 0 0 0 ";
+		assertEquals(resultadoReal.equals(resultadoEsperado),false);
 	}
 	
 	
