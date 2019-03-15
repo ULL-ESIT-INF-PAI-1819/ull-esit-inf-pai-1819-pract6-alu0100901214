@@ -12,12 +12,11 @@ import java.util.ArrayList;
 public class Board {
 	
 	private int board_[][];
-	//private int col_[];
 	private int sol_[];
-	//private int diagAs_[];
-	//private int diagDes_[];
+	private ArrayList<Solution> solutions_ = new ArrayList<Solution>();
 	private static final int size_ = 8;
 	private static final int nQueens_ = 8;
+	
 	Board(){
 		board_ = new int[size_][size_];
 		sol_ = new int[size_];
@@ -39,9 +38,12 @@ public class Board {
 		return cad;
 	}
 	
+	Solution getSolution(int i) {
+		return solutions_.get(i);
+	}
 	
 	void queens(int k, ArrayList<Integer> col, ArrayList<Integer> diagAs, ArrayList<Integer> diagDes) {
-
+		
 	}
 	
 	boolean content(ArrayList<Integer> v, int val) {

@@ -60,6 +60,29 @@ public class TestEightQueens {
 		assertEquals(resultadoReal.equals(resultadoEsperado),false);
 	}
 	
+	@Test
+	void TestQueens() {
+		Board b = new Board();
+		ArrayList<Integer> col = new ArrayList<Integer>();
+		ArrayList<Integer> diagAs = new ArrayList<Integer>();
+		ArrayList<Integer> diagDes = new ArrayList<Integer>();
+		b.queens(0, col, diagAs, diagDes);
+		Solution s;
+		s = b.getSolution(0);
+		
+		String resultadoEsperado =
+				"1 0 0 0 0 0 0 0 \r\n" + 
+				"0 0 0 0 0 0 1 0 \r\n" + 
+				"0 0 0 0 1 0 0 0 \r\n" + 
+				"0 0 0 0 0 0 0 1 \r\n" + 
+				"0 1 0 0 0 0 0 0 \r\n" + 
+				"0 0 0 1 0 0 0 0 \r\n" + 
+				"0 0 0 0 0 1 0 0 \r\n" + 
+				"0 0 1 0 0 0 0 0 ";
+		String resultadoReal = s.toString();
+		assertEquals(resultadoReal.equals(resultadoEsperado),false);
+	}
+	
 	
 	
 }
