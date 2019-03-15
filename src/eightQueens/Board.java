@@ -43,7 +43,26 @@ public class Board {
 	}
 	
 	void queens(int k, ArrayList<Integer> col, ArrayList<Integer> diagAs, ArrayList<Integer> diagDes) {
-		
+		if(k == nQueens_) {
+			Solution auxSol = new Solution();
+			auxSol.setSolution(sol_);
+			solutions_.add(auxSol);
+		} else {
+			for(int j = 1; j <= nQueens_; j++) {
+				if(!content(col,j)&&(!content(diagAs,j+k))&&(!content(diagDes,j-k))) {
+					sol_[k]=j;
+					col.add(j);
+					diagAs.add(j+k);
+					diagDes.add(j-k);
+					
+					queens(k+1,col,diagAs,diagDes);
+					
+					col.remove(col.size()-1);
+					diagAs.remove(col.size());
+					diagDes.remove(col.size());
+				}
+			}
+		}
 	}
 	
 	boolean content(ArrayList<Integer> v, int val) {
