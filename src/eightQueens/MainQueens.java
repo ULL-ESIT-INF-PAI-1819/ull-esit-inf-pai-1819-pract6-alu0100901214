@@ -29,7 +29,7 @@ public class MainQueens extends JFrame{
 		setVisible(true);
 		setSize(300,300);
 		setLocationRelativeTo(null);
-		button1 = new JButton("North");
+		button1 = new JButton("Next");
 		button1.addActionListener (new ActionListener(){@Override
 		public void actionPerformed(java.awt.event.ActionEvent e) {
 			// TODO Auto-generated method stub
@@ -39,7 +39,10 @@ public class MainQueens extends JFrame{
 			}
 		} });
 		
+		JLabel tag = new JLabel("Tiempo: " +i + " ms.");
+		
 		add(button1, BorderLayout.NORTH);
+		add(tag, BorderLayout.SOUTH);
 	}
 	
 	/**
