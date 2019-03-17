@@ -35,6 +35,8 @@ public class Solution {
 		}
 	}
 	
+	int getSolution(int i, int j){return solutionQueens[i][j];}
+	
 	public String toString() {
 		String cad="";
 		for(int i = 0; i < solutionQueens.length; i++) {
