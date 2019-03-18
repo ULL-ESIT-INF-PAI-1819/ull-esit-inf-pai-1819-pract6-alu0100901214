@@ -69,7 +69,6 @@ public class TestEightQueens {
 		b.queens(0, col, diagAs, diagDes);
 		Solution s;
 		s = b.getSolution(0);
-		
 		String resultadoEsperado =
 				"1 0 0 0 0 0 0 0 \r\n" + 
 				"0 0 0 0 0 0 1 0 \r\n" + 
@@ -81,6 +80,18 @@ public class TestEightQueens {
 				"0 0 1 0 0 0 0 0 ";
 		String resultadoReal = s.toString();
 		assertEquals(resultadoReal.equals(resultadoEsperado),false);
+	}
+	
+	@Test
+	void TestGetAlgebaricNotation() {
+		Board b = new Board();
+		ArrayList<Integer> col = new ArrayList<Integer>();
+		ArrayList<Integer> diagAs = new ArrayList<Integer>();
+		ArrayList<Integer> diagDes = new ArrayList<Integer>();
+		b.queens(0, col, diagAs, diagDes);
+		String resultadoReal = b.getAlgebaricNotation(8);
+		String resultadoEsperado = "e8 a7 d6 f5 h4 b3 g2 c1 ";
+		assertEquals(resultadoReal.equals(resultadoEsperado),true);
 	}
 	
 	

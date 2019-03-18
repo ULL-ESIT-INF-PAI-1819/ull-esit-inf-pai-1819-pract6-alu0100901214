@@ -12,6 +12,8 @@ import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 
+import com.sun.javafx.collections.MappingChange.Map;
+
 /**
  * @author Sergio González Guerra
  *
@@ -23,7 +25,6 @@ public class Board extends JFrame{
 	private ArrayList<Solution> solutions_ = new ArrayList<Solution>();
 	Clock clock_= new Clock();
 	private ArrayList<Long> times_ = new ArrayList<Long>();
-	
 	
 	private static final int size_ = 8;
 	private static final int nQueens_ = 8;
@@ -56,6 +57,10 @@ public class Board extends JFrame{
 	}
 	
 	public long getTime(int i){ return times_.get(i);}
+	
+	public String getAlgebaricNotation(int index) {
+
+	}
 	
 	void queens(int k, ArrayList<Integer> col, ArrayList<Integer> diagAs, ArrayList<Integer> diagDes) {
 		
