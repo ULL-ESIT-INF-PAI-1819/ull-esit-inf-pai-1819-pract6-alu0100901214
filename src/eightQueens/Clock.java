@@ -26,5 +26,6 @@ public class Clock {
 		}else {
 			return timeEnd_ - timeStart_;
 		}
+		
 	}
 }
