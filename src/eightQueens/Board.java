@@ -59,7 +59,15 @@ public class Board extends JFrame{
 	public long getTime(int i){ return times_.get(i);}
 	
 	public String getAlgebaricNotation(int index) {
-
+		String cad ="";
+		for(int i=0; i< size_; i++) {
+			for (int j = 0; j < size_; j++) {
+				if(solutions_.get(index).getSolution(i, j)==1) {
+					cad += AlgebaricNotation.values()[i*size_+j] + " ";
+				}
+			}
+		}
+		return cad;
 	}
 	
 	void queens(int k, ArrayList<Integer> col, ArrayList<Integer> diagAs, ArrayList<Integer> diagDes) {
