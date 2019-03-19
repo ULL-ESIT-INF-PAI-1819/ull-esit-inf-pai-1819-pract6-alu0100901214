@@ -36,13 +36,18 @@ public class VisualBoard extends JFrame{
 			public void actionPerformed(java.awt.event.ActionEvent e) {
 			boolean isBlue = true;
 			boolean oddRow = false;
-			k++;
+			if(k<b.getNumberOfSolutions()-1) {
+				k++;
+			}else {
+				k=0;
+			}
+			
 			Solution sol = b.getSolution(k);
 			pTexto.removeAll();
 			pTexto.revalidate();
 			p1.removeAll();
 			p1.revalidate();
-			JLabel texto1 = new JLabel("   k: " + k + "    ");
+			JLabel texto1 = new JLabel("   Solución Nº: " + k + "    ");
 			JLabel texto2 = new JLabel(b.getTime(k) + " ms    ");
 			JLabel texto3 = new JLabel(b.getAlgebaricNotation(k));
 			pTexto.add(texto1, BorderLayout.WEST);
@@ -102,9 +107,9 @@ public class VisualBoard extends JFrame{
         ArrayList<Integer> col = new ArrayList<Integer>();
 		ArrayList<Integer> diagAs = new ArrayList<Integer>();
 		ArrayList<Integer> diagDes = new ArrayList<Integer>();
-//		Clock times = new Clock();
-//		times.start();
-		b.queens(0, col, diagAs, diagDes);
+		Clock t= new Clock();
+		t.start();
+		b.queens(0, col, diagAs, diagDes, t);
 		
 		VisualBoard frame = new VisualBoard(b);
 		frame.setTitle("Chess");

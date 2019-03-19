@@ -12,7 +12,6 @@ import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 
-import com.sun.javafx.collections.MappingChange.Map;
 
 /**
  * @author Sergio González Guerra
@@ -25,6 +24,7 @@ public class Board extends JFrame{
 	private ArrayList<Solution> solutions_ = new ArrayList<Solution>();
 	Clock clock_= new Clock();
 	private ArrayList<Long> times_ = new ArrayList<Long>();
+	
 	
 	private static final int size_ = 8;
 	private static final int nQueens_ = 8;
@@ -56,6 +56,8 @@ public class Board extends JFrame{
 		return solutions_.get(i);
 	}
 	
+	int getNumberOfSolutions() {return solutions_.size();}
+	
 	public long getTime(int i){ return times_.get(i);}
 	
 	public String getAlgebaricNotation(int index) {
@@ -70,14 +72,16 @@ public class Board extends JFrame{
 		return cad;
 	}
 	
-	void queens(int k, ArrayList<Integer> col, ArrayList<Integer> diagAs, ArrayList<Integer> diagDes) {
+	void queens(int k, ArrayList<Integer> col, ArrayList<Integer> diagAs, ArrayList<Integer> diagDes, Clock t) {
 		
 		if(k == nQueens_) {
 			Solution auxSol = new Solution();
 			auxSol.setSolution(sol_);
 			solutions_.add(auxSol);
-			clock_.stop();
-			times_.add(clock_.getElapsedTime());
+			t.stop();
+			times_.add(t.getElapsedTime());
+			t.restart();
+			t.start();
 		} else {
 			for(int j = 1; j <= nQueens_; j++) {
 				if(!content(col,j)&&(!content(diagAs,j+k))&&(!content(diagDes,j-k))) {
@@ -86,7 +90,7 @@ public class Board extends JFrame{
 					diagAs.add(j+k);
 					diagDes.add(j-k);
 					
-					queens(k+1,col,diagAs,diagDes);
+					queens(k+1,col,diagAs,diagDes,t);
 					
 					col.remove(col.size()-1);
 					diagAs.remove(col.size());

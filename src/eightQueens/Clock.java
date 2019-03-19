@@ -20,6 +20,11 @@ public class Clock {
 		timeEnd_ = System.currentTimeMillis();
 	}
 	
+	public void restart() {
+		timeStart_=0;
+		timeEnd_=0;
+	}
+	
 	public long getElapsedTime() {
 		if(timeEnd_==0) {
 			return System.currentTimeMillis();

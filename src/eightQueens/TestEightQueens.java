@@ -66,7 +66,8 @@ public class TestEightQueens {
 		ArrayList<Integer> col = new ArrayList<Integer>();
 		ArrayList<Integer> diagAs = new ArrayList<Integer>();
 		ArrayList<Integer> diagDes = new ArrayList<Integer>();
-		b.queens(0, col, diagAs, diagDes);
+		Clock t= new Clock();
+		b.queens(0, col, diagAs, diagDes,t);
 		Solution s;
 		s = b.getSolution(0);
 		String resultadoEsperado =
@@ -88,7 +89,8 @@ public class TestEightQueens {
 		ArrayList<Integer> col = new ArrayList<Integer>();
 		ArrayList<Integer> diagAs = new ArrayList<Integer>();
 		ArrayList<Integer> diagDes = new ArrayList<Integer>();
-		b.queens(0, col, diagAs, diagDes);
+		Clock t= new Clock();
+		b.queens(0, col, diagAs, diagDes, t);
 		String resultadoReal = b.getAlgebaricNotation(8);
 		String resultadoEsperado = "e8 a7 d6 f5 h4 b3 g2 c1 ";
 		assertEquals(resultadoReal.equals(resultadoEsperado),true);
