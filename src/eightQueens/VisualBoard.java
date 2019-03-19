@@ -10,16 +10,16 @@ import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
-import javax.swing.JTextField;
 
 /**
  * @author Sergio González Guerra
  *
  */
+// Clase que representa un tablero de ajedrez con el problema de las 8 reinas.
 public class VisualBoard extends JFrame{
 	
-	private static final int size_ = 8;
-	int k=-1;
+	private static final int size_ = 8;	// Tamaño de filas y columnas del tablero.
+	int k=-1;	// Indice que indica la solución que se quiere mostrar.
 	
 	public VisualBoard(Board b) {
 		ImageIcon blueBoxImg = new ImageIcon(getClass().getResource("img/BlueBox_x64.jpg"));
@@ -47,7 +47,7 @@ public class VisualBoard extends JFrame{
 			pTexto.revalidate();
 			p1.removeAll();
 			p1.revalidate();
-			JLabel texto1 = new JLabel("   Solución Nº: " + k + "    ");
+			JLabel texto1 = new JLabel("   Solución Nº: " + (k+1) + "    ");
 			JLabel texto2 = new JLabel(b.getTime(k) + " ms    ");
 			JLabel texto3 = new JLabel(b.getAlgebaricNotation(k));
 			pTexto.add(texto1, BorderLayout.WEST);

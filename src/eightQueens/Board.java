@@ -17,49 +17,34 @@ import javax.swing.JLabel;
  * @author Sergio González Guerra
  *
  */
+// Clase que calcula el problema de las 8 reinas y almacena sus soluciones.
 public class Board extends JFrame{
 	
-	private int board_[][];
-	private int sol_[];
-	private ArrayList<Solution> solutions_ = new ArrayList<Solution>();
-	Clock clock_= new Clock();
-	private ArrayList<Long> times_ = new ArrayList<Long>();
+
+	private int sol_[];	// Array que guarda una de las posibles soluciones en un solo vector.
+	private ArrayList<Solution> solutions_ = new ArrayList<Solution>();	// Soluciones del problema de las 8 reinas.
+	Clock clock_= new Clock();	// Objeto Clock que calcula el tiempo para cada solución
+	private ArrayList<Long> times_ = new ArrayList<Long>();	// Array con los tiempos de cada solución
+	private static final int size_ = 8;		// Tamaño de filas y columnas del tablero.
+	private static final int nQueens_ = 8;	// Número de reinas que hay que poner.
 	
-	
-	private static final int size_ = 8;
-	private static final int nQueens_ = 8;
-	
-	
-	
+	// Constructor vacío.
 	Board(){
-		board_ = new int[size_][size_];
 		sol_ = new int[size_];
-		for(int i = 0; i < size_; i++) {
-			for(int j = 0; j < size_; j++) {
-				board_[i][j] = 0;
-			}
-		}
 	}
 	
-	public String toString() {
-		String cad="";
-		for(int i = 0; i < size_; i++) {
-			for(int j = 0; j < size_; j++) {
-				cad+= board_[i][j] + " ";
-			}
-			cad+="\n";
-		}
-		return cad;
-	}
-	
+	//Devuelve una solución.
 	Solution getSolution(int i) {
 		return solutions_.get(i);
 	}
 	
+	// Devuelve el número de soluciones.
 	int getNumberOfSolutions() {return solutions_.size();}
 	
+	// Devuelve el tiempo que ha tardado en obtenerse una solución.
 	public long getTime(int i){ return times_.get(i);}
 	
+	// Devuelve un String con la notación algebraica de la posición de cada reina de una solución.
 	public String getAlgebaricNotation(int index) {
 		String cad ="";
 		for(int i=0; i< size_; i++) {
@@ -72,6 +57,7 @@ public class Board extends JFrame{
 		return cad;
 	}
 	
+	//Calcula recursivamente todas las soluciones del problema de las 8 reinas y los guarda en un array.
 	void queens(int k, ArrayList<Integer> col, ArrayList<Integer> diagAs, ArrayList<Integer> diagDes, Clock t) {
 		
 		if(k == nQueens_) {
@@ -101,68 +87,13 @@ public class Board extends JFrame{
 		
 	}
 	
+	// Comprueba que un array contenga el valor pasado por parametro.
 	boolean content(ArrayList<Integer> v, int val) {
 		for(int i=0; i<v.size(); i++) {
 			if(v.get(i)==val)
 				return true;
 		}
 		return false;
-	}
-	
-	public void visualBoard(Solution sol, JFrame frame){
-		boolean isBlue = true;
-		boolean oddRow = false;
-        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);       
-        frame.setSize(800, 800);
-        JButton boton1 = new JButton("Pulsar aqui para cerrar ventana");
-        ImageIcon blueBoxImg = new ImageIcon(getClass().getResource("BlueBox_x128.jpg"));
-        ImageIcon greenBoxImg = new ImageIcon(getClass().getResource("GreenBox_x128.jpg"));
-        ImageIcon blueQueenImg = new ImageIcon(getClass().getResource("BlueQueen_x128.jpg"));
-        ImageIcon greenQueenImg = new ImageIcon(getClass().getResource("GreenQueen_x128.jpg"));
-        
-        frame.setLayout(new GridLayout(8,8));
-        
-        for (int i = 0; i < size_; i++) {
-			for (int j = 0; j < size_; j++) {
-				if(isBlue) {
-					if(sol.getSolution(i, j)==1) {
-						JLabel label = new JLabel();
-						label.setIcon(blueQueenImg);
-						frame.add(label);
-						isBlue=false;
-					}else {
-						JLabel label = new JLabel();
-						label.setIcon(blueBoxImg);
-						frame.add(label);
-						isBlue=false;
-					}
-				}else {
-					if(sol.getSolution(i, j)==1) {
-						JLabel label = new JLabel();
-						label.setIcon(greenQueenImg);
-						frame.add(label);
-						isBlue=true;
-					}else {
-						JLabel label = new JLabel();
-						label.setIcon(greenBoxImg);
-						frame.add(label);
-						isBlue=true;
-					}
-				}
-			}
-			if(oddRow==true) {
-				isBlue=true;
-				oddRow=false;
-			}else {
-				isBlue=false;
-				oddRow=true;
-			}
-			
-		}
-        frame.pack();
-        frame.setVisible(true);
-        
-        
 	}
 	
 }
