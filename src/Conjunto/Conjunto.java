@@ -74,6 +74,11 @@ public class Conjunto {
 	}
 	
 	public void eliminar(int val) {
-		
+		if(conjunto_.contains(val)) {
+			for (int i = 0; i < conjunto_.size(); i++) {
+				if(val == conjunto_.get(i))
+					conjunto_.remove(i);
+			}
+		}
 	}
 }

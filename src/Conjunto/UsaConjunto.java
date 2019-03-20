@@ -28,7 +28,9 @@ public class UsaConjunto {
 		System.out.println("C: " + C);
 		System.out.println(C.cardinal());
 		System.out.println(C.esVacio());
-		System.out.println(C.cardinal());
+		
+		C.eliminar(1);
+		System.out.println(C);
 	}
 
 }
