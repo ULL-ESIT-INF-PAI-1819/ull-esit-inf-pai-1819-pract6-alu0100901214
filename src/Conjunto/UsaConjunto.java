@@ -26,6 +26,9 @@ public class UsaConjunto {
 		File archivo = new File("conjunto1.txt");
 		Conjunto C= new Conjunto(archivo);
 		System.out.println("C: " + C);
+		System.out.println(C.cardinal());
+		System.out.println(C.esVacio());
+		System.out.println(C.cardinal());
 	}
 
 }

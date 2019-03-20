@@ -63,4 +63,8 @@ public class Conjunto {
 		return (conjunto_.size()==0);
 	}
 	
+	public boolean perteneceElemento() {
+		
+	}
+	
 }
