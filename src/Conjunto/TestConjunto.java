@@ -54,4 +54,13 @@ public class TestConjunto {
 		int resultadoEsperado = 3;
 		assertEquals(resultadoReal,resultadoEsperado);
 	}
+	
+	@Test
+	void pruebaEsVacio() {
+		int[] vector = {1,2,3};
+		Conjunto A= new Conjunto(vector);
+		boolean resultadoReal = A.esVacio();
+		boolean resultadoEsperado = false;
+		assertEquals(resultadoReal,resultadoEsperado);
+	}
 }

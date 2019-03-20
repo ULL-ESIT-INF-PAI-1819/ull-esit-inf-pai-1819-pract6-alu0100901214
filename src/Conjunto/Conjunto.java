@@ -55,4 +55,8 @@ public class Conjunto {
 		return conjunto_.size();
 	}
 	
+	public boolean esVacio() {
+		
+	}
+	
 }
