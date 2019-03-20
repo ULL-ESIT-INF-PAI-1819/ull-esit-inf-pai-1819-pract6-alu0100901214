@@ -60,11 +60,14 @@ public class Conjunto {
 	}
 	
 	public boolean esVacio() {
-		return (conjunto_.size()==0);
+		return conjunto_.size() == 0;
 	}
 	
 	public boolean perteneceElemento(int val) {
-		return (conjunto_.contains(val));
+		return conjunto_.contains(val);
 	}
 	
+	public void add(int val) {
+		
+	}
 }

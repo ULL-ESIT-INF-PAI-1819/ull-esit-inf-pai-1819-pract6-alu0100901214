@@ -72,4 +72,20 @@ public class TestConjunto {
 		boolean resultadoEsperado = true;
 		assertEquals(resultadoReal,resultadoEsperado);
 	}
+	
+	@Test
+	void pruebaAdd() {
+		int[] vector = {1,2,3};
+		Conjunto A= new Conjunto(vector);
+		A.add(1);
+		String resultadoReal = A.toString();
+		String resultadoEsperado = "1 2 3 ";
+		
+		assertEquals(resultadoReal,resultadoEsperado);
+		
+		A.add(4);
+		resultadoReal = A.toString();
+		resultadoEsperado = "1 2 3 4 ";
+		assertEquals(resultadoReal,resultadoEsperado);
+	}
 }
