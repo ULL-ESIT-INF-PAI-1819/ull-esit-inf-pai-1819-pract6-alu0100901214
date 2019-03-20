@@ -69,7 +69,7 @@ public class TestConjunto {
 		int[] vector = {1,2,3};
 		Conjunto A= new Conjunto(vector);
 		boolean resultadoReal = A.perteneceElemento(1);
-		boolean resultadoEsperado = false;
+		boolean resultadoEsperado = true;
 		assertEquals(resultadoReal,resultadoEsperado);
 	}
 }

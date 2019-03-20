@@ -64,7 +64,7 @@ public class Conjunto {
 	}
 	
 	public boolean perteneceElemento(int val) {
-		
+		return (conjunto_.contains(val));
 	}
 	
 }
