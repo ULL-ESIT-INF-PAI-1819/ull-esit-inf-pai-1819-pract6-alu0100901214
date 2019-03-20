@@ -68,7 +68,7 @@ public class TestConjunto {
 	void pruebaPerteneceElemento() {
 		int[] vector = {1,2,3};
 		Conjunto A= new Conjunto(vector);
-		boolean resultadoReal = A.perteneceElemento();
+		boolean resultadoReal = A.perteneceElemento(1);
 		boolean resultadoEsperado = false;
 		assertEquals(resultadoReal,resultadoEsperado);
 	}
