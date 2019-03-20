@@ -18,7 +18,9 @@ public class Conjunto {
 	Conjunto(){}
 	
 	Conjunto(int[] valores){
-		
+		for (int i = 0; i < valores.length; i++) {
+			conjunto_.add(valores[i]);
+		}
 	}
 	
 	public String toString() {
