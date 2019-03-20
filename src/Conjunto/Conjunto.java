@@ -68,6 +68,8 @@ public class Conjunto {
 	}
 	
 	public void add(int val) {
-		
+		if(!conjunto_.contains(val)&&(val>=0))
+			conjunto_.add(val);
+		conjunto_.sort(null);
 	}
 }
