@@ -5,6 +5,8 @@ package Conjunto;
 
 import static org.junit.Assert.assertEquals;
 
+import java.io.File;
+import java.io.IOException;
 import java.util.ArrayList;
 
 import org.junit.jupiter.api.Test;
@@ -28,6 +30,16 @@ public class TestConjunto {
 	void constructorPorVector() {
 		int[] vector = {1,2,3};
 		Conjunto A= new Conjunto(vector);
+		String resultadoReal = A.toString();
+		String resultadoEsperado = "1 2 3 ";
+		
+		assertEquals(resultadoReal,resultadoEsperado);
+	}
+	
+	@Test 
+	void constructorPorFichero() throws IOException{
+		File archivo = new File("conjunto1.txt");
+		Conjunto A= new Conjunto(archivo);
 		String resultadoReal = A.toString();
 		String resultadoEsperado = "1 2 3 ";
 		

@@ -3,6 +3,11 @@
  */
 package Conjunto;
 
+import java.io.BufferedReader;
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.FileReader;
+import java.io.IOException;
 import java.util.ArrayList;
 
 /**
@@ -17,10 +22,25 @@ public class Conjunto {
 	// Constructor Vacío.
 	Conjunto(){}
 	
+	// Constructor pasando un vector.
 	Conjunto(int[] valores){
 		for (int i = 0; i < valores.length; i++) {
 			conjunto_.add(valores[i]);
 		}
+	}
+	
+	// Constructor pasando un archivo.
+	Conjunto(File archivo) throws IOException{
+		FileReader fr = new FileReader(archivo);
+		BufferedReader br = new BufferedReader(fr);
+		String cadena;
+		cadena = br.readLine();
+		String[] parts = cadena.split(" ");
+		
+		for (int i = 0; i < parts.length; i++) {
+			conjunto_.add(Integer.parseInt(parts[i]));
+		}
+		
 	}
 	
 	public String toString() {
