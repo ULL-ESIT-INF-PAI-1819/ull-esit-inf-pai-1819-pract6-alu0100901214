@@ -23,4 +23,14 @@ public class TestConjunto {
 		
 		assertEquals(resultadoReal,resultadoEsperado);
 	}
+	
+	@Test
+	void constructorPorVector() {
+		int[] vector = {1,2,3};
+		Conjunto A= new Conjunto(vector);
+		String resultadoReal = A.toString();
+		String resultadoEsperado = "1 2 3";
+		
+		assertEquals(resultadoReal,resultadoEsperado);
+	}
 }
