@@ -52,7 +52,7 @@ public class Conjunto {
 	}
 	
 	public int cardinal() {
-		
+		return conjunto_.size();
 	}
 	
 }
