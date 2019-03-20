@@ -20,7 +20,7 @@ public class UsaConjunto {
 		// TODO Auto-generated method stub
 		Conjunto A = new Conjunto();
 		System.out.println("A: " + A);
-		int[] vector = {1,2,3};
+		int[] vector = {1,4,-4};
 		Conjunto B = new Conjunto(vector);
 		System.out.println("B: " +B);
 		File archivo = new File("conjunto1.txt");
