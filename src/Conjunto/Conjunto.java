@@ -72,4 +72,8 @@ public class Conjunto {
 			conjunto_.add(val);
 		conjunto_.sort(null);
 	}
+	
+	public void eliminar(int val) {
+		
+	}
 }

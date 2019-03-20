@@ -88,4 +88,20 @@ public class TestConjunto {
 		resultadoEsperado = "1 2 3 4 ";
 		assertEquals(resultadoReal,resultadoEsperado);
 	}
+	
+	@Test
+	void pruebaEliminar() {
+		int[] vector = {1,2,3};
+		Conjunto A= new Conjunto(vector);
+		A.eliminar(1);
+		String resultadoReal = A.toString();
+		String resultadoEsperado = "2 3 ";
+		
+		assertEquals(resultadoReal,resultadoEsperado);
+		
+		A.eliminar(4);
+		resultadoReal = A.toString();
+		resultadoEsperado = "2 3 4 ";
+		assertEquals(resultadoReal,resultadoEsperado);
+	}
 }
