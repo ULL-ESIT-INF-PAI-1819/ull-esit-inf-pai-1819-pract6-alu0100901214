@@ -45,4 +45,13 @@ public class TestConjunto {
 		
 		assertEquals(resultadoReal,resultadoEsperado);
 	}
+	
+	@Test
+	void pruebaCardinal() {
+		int[] vector = {1,2,3};
+		Conjunto A= new Conjunto(vector);
+		int resultadoReal = A.cardinal();
+		int resultadoEsperado = 3;
+		assertEquals(resultadoReal,resultadoEsperado);
+	}
 }

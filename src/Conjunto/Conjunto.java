@@ -51,4 +51,8 @@ public class Conjunto {
 		return cad;
 	}
 	
+	public int cardinal() {
+		
+	}
+	
 }
